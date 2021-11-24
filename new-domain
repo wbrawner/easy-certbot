@@ -1,0 +1,9 @@
+#!/osr/bin/env sh
+
+CMD="certbot certonly --webroot -w /var/www/html"
+
+for domain in "$@"; do
+    CMD="$CMD -d $domain"
+done
+
+eval $CMD
